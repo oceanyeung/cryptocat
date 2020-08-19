@@ -1,6 +1,11 @@
 <html>
 <head>
     <style>
+        #cat {
+            position:relative;
+            left: 50px;
+            top: 50px;
+        }
         #head {
             position: relative;
             background-color:#01a8d8;
@@ -19,7 +24,7 @@
             border-radius: 50%;
             border: 1px solid #000;
         }
-        #eye_left {
+        .eye {
             position: absolute;
             border-radius: 50%;
             background-color: white;
@@ -29,17 +34,11 @@
             left: 33px;
             top: -30px;
         }
-        #eye_right {
-            position: absolute;
-            border-radius: 50%;
-            background-color: white;
-            border: 1px solid black;
-            width: 60px;
-            height: 70px;
-            right: 33px;
+        .eye.right {
+            left: 95px;
             top: -30px;
         }
-        #pupil_left {
+        .eye .pupil {
             position: absolute;
             border-radius: 50%;
             width: 15px;
@@ -48,14 +47,8 @@
             bottom: 15px;
             right: 15px;
         }
-        #pupil_right {
-            position: absolute;
-            border-radius: 50%;
-            width: 15px;
-            height: 15px;
-            background-color: #000;
-            bottom: 15px;
-            left: 15px;
+        .eye.right .pupil {
+            left: 12px;
         }
         #mouth {
             position: absolute;
@@ -69,25 +62,186 @@
         }
         #nose {
             position: absolute;
+            background-color: red;
+            border: solid 1px #000;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            left: 81px;
+            top: 30px
+        }
+        #split {
+            position: absolute;
+            border: solid 2px #000;
+            border-color: transparent #000 transparent transparent;
+            height: 62px;
+            width: 2px;
+            left: 90px;
+            top: 54px;
+        }
+        .whisker {
+            position: absolute;
+            width: 1px;
+            height: 80px;
+            border: solid 2px #000;
+            border-color:transparent transparent transparent #000;
+            top: 0px;
+            left: 94px;
+        }
+        .whisker.tl {
+            transform: rotate(-80deg);
+            left: 30px;
+            top: 10px;
+        }
+        .whisker.tr {
+            transform: rotate(80deg);
+            left: 150px;
+            top: 12px;
+        }
+        .whisker.ml {
+            transform: rotate(-90deg);
+            left: 30px;
+            top: 30px;
+        }
+        .whisker.mr {
+            transform: rotate(90deg);
+            left: 150px;
+            top: 33px;
+        }
+        .whisker.bl {
+            transform: rotate(-100deg);
+            left: 30px;
+            top: 50px;
+        }
+        .whisker.br {
+            transform: rotate(100deg);
+            left: 150px;
+            top: 50px;
+        }
+        .ears {
+            position: absolute;
+            left: -10px;
+            width: 90px;
+            height: 100px;
+            background-color: #01a8d8;
+            border: 2px solid #000;
+            z-index: 0;
+            border-radius: 5% 80%
+        }
+        .ears.right {
+            left: 120px;
+            transform: rotate(90deg);
+        }
+        .ears .ears_inner {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: rgb(187, 146, 146);
+            border: 2px solid #000;
+            border-radius: 10% 80%;
+            top: 15px;
+            left: 10px;
+        }
+        #body .chest {
+            position: absolute;
+            width: 150px;
+            height: 210px;
+            border: #000;
+            background-color: #01a8d8;
+            top: 160px;
+            left: 25px;
+            border-radius: 45% 45%
+        }
+        .chest .inner{
+            position: absolute;
+            width: 80px;
+            height: 150px;
+            background-color: #fff;
+            left: 35px;
+            top: 10px;
+            border-radius: 150% 150% 150% 150%
+        }
+        .frontpaw {
+            position: absolute;
+            width: 50px;
+            height: 150px;
+            background-color: #01a8d8;
+            top: 230px;
+            left: 20px;
+            border: #000;
+            border-radius: 32% 12% 40% 40%;
+            border: 2px solid #000;
+            border-top: transparent;
+        }
+        .frontpaw.right {
+            left: 125px;
+            border-radius: 12% 32% 40% 40%;
+        }
+        .backpaw {
+            position: absolute;
+            width: 50px;
+            height: 140px;
+            background-color: #05718f;
+            border-radius: 122% 32% 40% 40%;
+            border: 2px solid #000;
+            top: 220px;
+        }
+        .backpaw.right {
+            left: 150px;
+            transform: scaleX(-1);
+        }
+        .tail {
+            position: absolute;
+            width: 250px;
+            height: 30px;
+            background-color: #01a8d8;
+            top: 330px;
+            left: 50px;
+            border-radius: 0 50% 20%;
+            border: 2px solid #000;
         }
     </style>
 </head>
 <body>
 
    <div id="cat">
+        <div id="ears">
+            <div class="ears left">
+                <div class="ears_inner"></div>
+            </div>
+            <div class="ears right">
+                <div class="ears_inner"></div>
+            </div>
+        </div>
+        <div id="body">
+            <div class="tail"></div>
+            <div class="backpaw left"></div>
+            <div class="backpaw right"></div>
+            <div class="chest">
+                <div class="inner"></div>
+            </div>
+            <div class="frontpaw left"></div>
+            <div class="frontpaw right"></div>
+        </div>
         <div id="head">
             <div id="face">
-                <div id="eye_left">
-                    <div id="pupil_left"></div>
+                <div id="eyes">
+                    <div class="eye left">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="eye right">
+                        <div class="pupil"></div>
+                    </div>
                 </div>
-                <div id="eye_right">
-                    <div id="pupil_right"></div>
-                </div>
-                <div id="mouth">
-                </div>
-                <div id="nose">
-
-                </div>
+                <div id="mouth"></div>
+                <div id="nose"></div>
+                <div id="split"></div>
+                <div id="whisker" class="whisker tl"></div>
+                <div id="whisker" class="whisker tr"></div>
+                <div id="whisker" class="whisker ml"></div>
+                <div id="whisker" class="whisker mr"></div>
+                <div id="whisker" class="whisker bl"></div>
+                <div id="whisker" class="whisker br"></div>
             </div>
         </div>
 
