@@ -1,0 +1,96 @@
+<html>
+<head>
+    <style>
+        #head {
+            position: relative;
+            background-color:#01a8d8;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid #000;
+        }
+        #face {
+            position: absolute;
+            background-color:#fff;
+            top: 50px;
+            left: 5px;
+            width: 190px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid #000;
+        }
+        #eye_left {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid black;
+            width: 60px;
+            height: 70px;
+            left: 33px;
+            top: -30px;
+        }
+        #eye_right {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid black;
+            width: 60px;
+            height: 70px;
+            right: 33px;
+            top: -30px;
+        }
+        #pupil_left {
+            position: absolute;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: #000;
+            bottom: 15px;
+            right: 15px;
+        }
+        #pupil_right {
+            position: absolute;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: #000;
+            bottom: 15px;
+            left: 15px;
+        }
+        #mouth {
+            position: absolute;
+            border: solid 2px #000;
+            border-radius: 0 0 60% 60%;
+            border-color: transparent transparent #000 transparent;
+            width: 140px;
+            height: 100px;
+            bottom: 30px;
+            left: 25px;
+        }
+        #nose {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+   <div id="cat">
+        <div id="head">
+            <div id="face">
+                <div id="eye_left">
+                    <div id="pupil_left"></div>
+                </div>
+                <div id="eye_right">
+                    <div id="pupil_right"></div>
+                </div>
+                <div id="mouth">
+                </div>
+                <div id="nose">
+
+                </div>
+            </div>
+        </div>
+
+   </div> 
+</body>
+</html>
