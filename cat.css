@@ -90,30 +90,19 @@
     left: 30px;
     top: 10px;
 }
-.whisker.tr {
-    transform: rotate(80deg);
-    left: 150px;
-    top: 12px;
-}
 .whisker.ml {
     transform: rotate(-90deg);
     left: 30px;
     top: 30px;
-}
-.whisker.mr {
-    transform: rotate(90deg);
-    left: 150px;
-    top: 33px;
 }
 .whisker.bl {
     transform: rotate(-100deg);
     left: 30px;
     top: 50px;
 }
-.whisker.br {
-    transform: rotate(100deg);
-    left: 150px;
-    top: 50px;
+.whisker_group.right {
+    transform: scaleX(-1);
+    left: 120px;    
 }
 .ears {
     position: absolute;
